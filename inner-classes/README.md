@@ -1,4 +1,4 @@
-## Inner Classes
+# Inner Classes
 - Inner class = nested class
 - Four main cases
 

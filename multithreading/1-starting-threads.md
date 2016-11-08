@@ -2,7 +2,7 @@
 
 ## Basic Thread Synchronization
 
-- 2 kids of problems when multithreading: data caching and threads interleaving
+- 2 kinds of problems when multithreading: data caching and threads interleaving
 
 ### 1. Caching Variables and `volatile`
 - variables' values may get cached by default because threads may not expect them to change on their own.

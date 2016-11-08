@@ -1,11 +1,14 @@
 # Multithreading
 
+## Starting Threads
+
 - Thread = separate OS process
 - You can run several in parallel
 - 2 basic ways
 
 ### 1. Extend the Thread class
-- Override run()
+- Thread is a class that has method `run()`
+- Override that method
 
 ```java
 public class Runner extends Thread {
@@ -17,8 +20,8 @@ public class Runner extends Thread {
 public class App {
   public static void main(String[] args) {
     Runner runner1 = new Runner();
-    // if you call .run() then your code will run in the main
-    // thread. start() still calls run()
+    // if you call .run() then your code will run in the main thread
+    // if you call .start() then run() will be run in its own thread
     runner1.start();
   }
 }

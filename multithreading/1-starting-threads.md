@@ -3,12 +3,14 @@
 ## Starting Threads
 
 - Thread = separate OS process
-- You can run several in parallel
+- You can run several in parallel with different priorities
+- A new thread has the same initial priority as the parent
 - 2 basic ways
 
-### 1. Extend the Thread class
+### 1. Extend the Thread class in a subclass
 - Thread is a class that has method `run()`
 - Override that method
+- You can also override the other Thread methods
 
 ```java
 public class Runner extends Thread {
@@ -28,8 +30,9 @@ public class App {
 ```
 
 ### 2. Implement the Runnable interface
-- Implement run()
+- Runnable is an interface with only method -> `run()` with no arguments
 - Pass an instance of the implementation to an instance of Thread()
+- If you want to override other Thread methods, then use method #1
 
 ```java
 public class Runner implements Runnable {
@@ -45,10 +48,11 @@ public class App {
   }
 }
 
-// Using an anonymous method
+// Using an anonymous method.
+// In this method, you don't need Runner class
 public class App {
   public static void main(String[] args) {
-    Thread t1 = new Thread (new Runner() {
+    Thread t1 = new Thread (new Runnable() {
       public void run() {
         // your code to run in its own thread
       }

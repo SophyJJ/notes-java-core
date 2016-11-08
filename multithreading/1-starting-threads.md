@@ -1,63 +1,60 @@
 # Multithreading
 
-## Starting Threads
+## Basic Thread Synchronization
 
-- Thread = separate OS process
-- You can run several in parallel with different priorities
-- A new thread has the same initial priority as the parent
-- 2 basic ways
+- 2 kids of problems when multithreading: data caching and threads interleaving
 
-### 1. Extend the Thread class in a subclass
-- Thread is a class that has method `run()`
-- Override that method
-- You can also override the other Thread methods
+### 1. Caching Variables and `volatile`
+- variables' values may get cached by default because threads may not expect them to change on their own.
+- For optimization, Java may cache values because it won't expect threads to interact
+- So, if you have 2 threads setting or getting the same variables, then you should use `volatile`
+- `volatile` is used to prevent threads to cache a variable that is not modified by the thread
 
 ```java
-public class Runner extends Thread {
+// Example:
+// In this example two threads interact with the variable "running".
+// For this reason, that variable was declared "volatile"
+public class Processor extends Thread {
+  // "volatile" = this variable should not be cached by any thread
+  private volatile boolean running = true;
+
+  // this will be run in its own thread when calling .start()
   public void run() {
-    //code to run in parallel
+    // reading "running". Since this thread never changes "running", then
+    // it could be cached during Java optimization. For this reason, we need
+    // to declare it as volatile
+    while (running) {
+        System.out.println("hello");
+
+        try {
+          Thread.sleep(100);
+        }
+        catch(InterruptedException e) {
+          e.printStackTrace();
+        }
+    }
+  }
+
+  public void shutdown() {
+    // this will stop the running thread
+    running = false;
   }
 }
 
 public class App {
+  // the main thread interacts with "running" variable too
   public static void main(String[] args) {
-    Runner runner1 = new Runner();
-    // if you call .run() then your code will run in the main thread
-    // if you call .start() then run() will be run in its own thread
-    runner1.start();
-  }
-}
-```
+    Processor proc1 = new Processor();
 
-### 2. Implement the Runnable interface
-- Runnable is an interface with only method -> `run()` with no arguments
-- Pass an instance of the implementation to an instance of Thread()
-- If you want to override other Thread methods, then use method #1
+    // this calls "run()" in its own thread
+    proc1.start();
 
-```java
-public class Runner implements Runnable {
-  public void run() {
-    //code to run in parallel
-  }
-}
+    // this pauses the main thread until some input is given
+    System.out.println("Press return to stop...");
+    Scanner scanner = new Scanner(System.in);
 
-public class App {
-  public static void main(String[] args) {
-    Thread t1 = new Thread (new Runner());
-    t1.start();
-  }
-}
-
-// Using an anonymous method.
-// In this method, you don't need Runner class
-public class App {
-  public static void main(String[] args) {
-    Thread t1 = new Thread (new Runnable() {
-      public void run() {
-        // your code to run in its own thread
-      }
-    });
-    t1.start();
+    // set the volatile variable to stop the proc1 thread
+    proc1.shutdown();
   }
 }
 ```

@@ -1,1 +1,1 @@
-# java-core-practice
+# java-core-notes

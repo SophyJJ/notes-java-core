@@ -8,12 +8,13 @@
 # Arrays
 
 ```java
-# declare only
+// declare only
 float[] theVals = new Float[3];
 
-# you can initialize in the declaration too
+// you can initialize in the declaration too
 float[] theVals = { 10.0f, 20.0f, 15.0f };
 
+// loop over all elements
 for(float var : theVals) {
    system.out.println(var);
 }

@@ -23,6 +23,7 @@
   - They are "stored by-value". Each variable has its own copy of data.
 
 ## Math Operators
+
   - 5 basic: +, -, *, /, %
   - prefix/ postfix: ++, --
   - Compound Assignment Operators: +=, -=, *=, /=, %=

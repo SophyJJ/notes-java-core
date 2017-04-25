@@ -26,3 +26,23 @@ flight2 = flight1;
 - private -> available only within class -> cannot be used in classes, can be used in methods
 
 - class names have to match source class filename ONLY if the class is public
+
+## Initializers
+
+- You can iniitlaize a class in 3 ways:
+  - field initializers
+    - in the class, you can set an initial state for instance variables directly
+    - you can set them to a value, reuse other variables, other classes' methods, etc
+  - constructors
+    - no return
+    - java provides an empty constructor
+    - if you create a constructor, then java will not provide the empty constructor anymore
+    - `this(params)` will call the constructor with those params. You can chain them.
+    - `this(params)` has to be the first line when chaining constructors
+    - `private` constructors can only be called by other constructors
+  - initialization blocks
+    - shared accross all constructor
+    - executed as if code was at start of each constructor
+    - you can have multiple initialization blocks (they are exeucted in order)
+    - runs after the field initializer
+- instance variables always initialized to "zero" (ie, 0. 0.0. '\u0000', false, null)

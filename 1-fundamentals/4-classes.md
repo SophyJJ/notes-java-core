@@ -46,3 +46,24 @@ flight2 = flight1;
     - you can have multiple initialization blocks (they are exeucted in order)
     - runs after the field initializer
 - instance variables always initialized to "zero" (ie, 0. 0.0. '\u0000', false, null)
+
+## Parameters
+
+- parameters are immutable = changes made to passed value are not visible outside of the method
+- always passed by value (copy). It won't affect primitive types nor object reference vars.
+- variable number of parameters:
+  - ex:
+    ```java
+    // can only be used on the last parameter in the list
+    // it's actually reading that last param as an array
+    public void methodName(ClassName... paramList) {
+        // handle paramList as an array
+    }
+
+     // call by passing an array
+    instance.methodName(new ClassName[] { instance1, instance2, instance3 });
+
+    // call by passing multiple params
+    instance.methodName(instance1, instance2, instance3);
+    ```
+## Inheritance

@@ -66,4 +66,100 @@ flight2 = flight1;
     // call by passing multiple params
     instance.methodName(instance1, instance2, instance3);
     ```
+
 ## Inheritance
+
+- You can't override `final` or `private` methods from the BaseClass
+
+### With Polymorphism
+
+```java
+/*
+RULES:
+  - inst CANNOT call new methods added ChildClass unless they override BaseClass'
+  - *BAD* if you override a BaseClass instance var in ChildClass, then
+    - if you call a BaseClass method, it WILL use the BaseClass intance var
+  - *GOOD* if you override a BaseClass method in the ChildClass, then
+    - if it will correctly call the ChildClass' version and use the correct instance var
+    - if you call a BaseClass method that uses that overridden method, then it will correctly call the ChildClass' version
+*/
+
+BaseClass inst = new ChildClass();
+
+// to call a ChildClass method (that wasn't overridden)
+if (inst instanceof ChildClass) {
+    ChildClass cc = (ChildClass inst);
+    // NOTE: none of this is needed if calling an overridden method
+    cc.childClassNewMethod();
+}
+```
+
+### Without Polymorphism
+
+```java
+/*
+RULES:
+  - *Bad* if you override a BaseClass instance var in ChildClass, then
+    - if you call a BaseClass method, it WILL use the BaseClass instance var
+  - *GOOD* if you override a BaseClass method in ChildClass, then
+    - if it will correctly call the ChildClass' version and use the correct instance var
+    - if you call a BaseClass method that uses that overridden method, then it will correctly call the ChildClass' version
+*/
+
+ChildClass inst = new ChildClass();
+```
+- `@Override` will protect you at compile time
+- All Clases (including Arrays) inherit from Object class
+
+## Equality
+
+- only way compare object reference vars's values is to override their `equals` method
+- `==` will compare if they are pointing to the same object in memory
+- the default `equals` takes the object they are pointing in memory into account
+
+## super
+
+- super treats the object as if it is an instance of the BaseClass
+- useful for accessing BaseClass members that were overridden
+
+## final
+
+- prevents a member or class to be overridden or inherited
+
+```java
+// this class cannot be inherited from
+final public class SomeClass {
+}
+
+// this class can be inherited from, but cannot override the method
+public class SomeOtherClass {
+    // this method cannot be overridden by children because it's final
+    public final void methodCannotBeOverridden() {
+    }
+
+    // this method cannot be overridden by children because it's private
+    private void methodIsPrivate() {
+    }
+}
+```
+
+## abstract
+
+- the method HAS to be overridden
+- if there is a method as `abstract`, then the whole class has to be `abstract`
+
+```java
+// the whole class has to be set as abstract if there is at least 1 abstract method
+public abstract class SomeClass {
+
+    // this method has to be overridden when inherited
+    public abstract void someMethodToOverride();
+}
+```
+
+# Constructors and inheritance
+
+- constructors are *NOT* inherited. Every class is responsible for its own
+- the ChildClass constructor always calls the BaseClass constructor (explicit or implicit)
+  - if not specified, your ChildClass constructor will call the no-argument BaseClass constructor
+- use `super` to call the BaseClass constructor. Has to be from the first line.

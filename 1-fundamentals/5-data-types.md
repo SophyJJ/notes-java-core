@@ -18,7 +18,7 @@
 - all immutable
 - there are clases representations for ALL primitive types
 - They are lightweight (little overhead)
-- you have access their methods
+- you have access to their public instance vars and methods
 - you can now use polymorphism on them (`Object obj = 100`)
 - conversions between primitive <-> wrapper class are done implicitely by Java
 - you can convert expliticely as well:

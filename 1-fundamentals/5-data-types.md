@@ -19,9 +19,20 @@
 - there are clases representations for ALL primitive types
 - They are lightweight (little overhead)
 - you have access to their public instance vars and methods
-- you can now use polymorphism on them (`Object obj = 100`)
+- you can now use polymorphism on them (`Object obj = 100;`)
 - conversions between primitive <-> wrapper class are done implicitely by Java
 - you can convert expliticely as well:
   - primitive -> wrapper: boxing (using valueOf())
   - wrapper -> primitive: unboxing (xxxValue())
 - Now you can use null for them. Much better when checking if a value has been set
+- need to use .`equals()` when outside of some range (+/-127 for ints). Otherwise `==` is ok
+
+## final and static final
+
+- 2 types of final fields:
+  - final fields that can only be set in constructor, field initializer, or init block and nowhere else
+    - ex: `private final varTobeSetAtConstructor;`
+  - static final fields -> these are constants. Cannot be changed and tied to class.
+    - `static final CONSTANT = 100;`
+
+- you can use enum types in a switch by only using thier names without enum type

@@ -4,6 +4,7 @@
 - they create a namespace (to avoid namingt collisions), set boundaries, and act as a distribution unit
 - you want package names to be unique, so for github: `com.github.luiscarlin`
 - you don't have to import classes if they are located within the same package they are being used
+- you don't have to import clases from java.lang
 - importing classes and packages is NOT adding referenced code, it's just mapping them.
   - so, if you want to import everything or just 1 class, it's the same wrt size, etc
 - two ways to do imports:

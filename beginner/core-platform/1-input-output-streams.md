@@ -15,11 +15,11 @@
       - extend Filter* classes (abstract) and override what you want
         - will close your enclosed stream when doing try-with-resources
 - `java.io File*` are deprecated -> use `java.nio.file` instead
-  - `java.nio.file` provides a lot of convenience methods to read/ write easier
+  - `java.nio.file` provides a lot of convenience methods to read/ write easily
   - only `java.io File*` are deprecaded. `Buffer*` and others are still in use
   - `java.nio.file` provides factories for `BufferReader`.
 - a Zip file is a file system that you can create/ copy files/ read/ write to
-- `File.*` simplifies interacting with files
+- `Files.*`, `Paths.*`, `FileSystems.*` provide convenience methods
 - If you need array with iterable, then convert it to List with `Arrays.asList(arr)`
 
 ## Error Handling (try with resources)

@@ -39,3 +39,38 @@
 - TreeSet: a SortedSet implemented as balanced binary tree
   - Efficient: in-order access
   - Inefficient: less efficient than HashSet to modify and search
+
+## Sorting
+
+- 2 ways to specify sort: `Comparable` anb `Comparator` interface
+  - Comparable interface:
+    - implemented by class being sorted
+    - should be consistent with `equals`
+  - Comparator interface:
+    - implemented by class performing the sort
+    - class performing sort != class being sorted
+
+## Map Collections
+
+- keys are unique
+- values can be null
+
+### Map Interfaces
+
+- Map: Basic map operations
+- SortedMap: Map with sorted keys
+
+### Map Classes
+
+- HashMap: Map with efficient general purpose
+- TreeMap: SortedMap implemented as a self-balancing tree. Supports Comparable and Comparator.
+
+## Map Lambda
+
+```java
+// loop over key, value pairs
+myMap.forEach((k, v) -> System.out.println(k +  " | " + v));
+
+// change all values in map to uppercase
+myMap.replaceAll((k, v) -> v.toUpperCase());
+```

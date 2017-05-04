@@ -63,6 +63,11 @@
 ### Map Classes
 
 - HashMap: Map with efficient general purpose
+  - not synchronized
+  - keys cannot be null, but values can be null+
+  - better for non-threaded apps
+- HashTable: Map that is synchronized
+  - neither keys nor values can be null
 - TreeMap: SortedMap implemented as a self-balancing tree. Supports Comparable and Comparator.
 
 ## Map Lambda

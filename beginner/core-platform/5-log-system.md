@@ -92,7 +92,7 @@ public class Main {
 }
 ```
 
-- you can have hierarchical logging based on the package names
+- you can have hierarchical logging based on the logger names (based on package)
 - if log level is null, it will inherit its parent level
 - set level on parent logger (restrictive), and output log message + level (less restrictive) from children
 - add handler to upper parents

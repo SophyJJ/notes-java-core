@@ -19,6 +19,7 @@
 
 ## Inheritance
 
+```
 - Collection (INT) -extends-> List (INT) -implements-> `ArrayList`, `LinkedList`
                    -extends-> Set (INT) -implements-> `HashSet`
                                         -extends-> SortedSet (INT) -implements-> `TreeSet`
@@ -26,6 +27,7 @@
                                           -extends-> Deque (INT) -implements-> `LinkedList`, `ArrayDeque`
                    -extends-> Map (INT) -> `HashMap`
                                         -extends-> SortedMap (INT) -implements-> `TreeMap`
+```
 
 ## How to pick interface?
 

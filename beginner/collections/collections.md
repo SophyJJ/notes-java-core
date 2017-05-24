@@ -24,7 +24,6 @@
                                         -extends-> SortedSet (INT) -implements-> `TreeSet`
                    -extends-> Queue (INT) -implements-> `PriorityQueue`
                                           -extends-> Deque (INT) -implements-> `LinkedList`, `ArrayDeque`
-
                    -extends-> Map (INT) -> `HashMap`
                                         -extends-> SortedMap (INT) -implements-> `TreeMap`
 

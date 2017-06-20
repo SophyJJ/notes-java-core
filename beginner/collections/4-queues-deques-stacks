@@ -1,0 +1,4 @@
+# Queues, Deques, and Stacks
+
+- collections with modification order
+- you can also set a priority on items to be taken out of the queue

@@ -78,3 +78,7 @@ private final Set<Product> products = new TreeSet<>(Product.BY_NAME);
 - add: O(1) - bitwise operations with longs
 - contains: O(1) - bitwise operations with longs
 - next: O(1) - bitwise operations with longs
+
+## SortedSet and NavigableSet
+
+- collections with distinct elements that also have order

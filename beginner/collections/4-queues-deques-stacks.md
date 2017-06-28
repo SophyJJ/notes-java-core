@@ -18,8 +18,8 @@
 
 - Last In, First Out
 - Top element is popped off
-- Java.Util.Stack deprecated -> Don't use it
-- Instead of Java.Util.Stack, use Deque (double ended queue)
+- java.util.Stack deprecated -> Don't use it
+- Instead of java.util.stack, use Deque (double ended queue)
 - You can use Deque as a queue or as a stack. (ie. you can add/ remove from head/tail)
 - If you want to use it as a stack, you can use `push` and `pop` if you want
 

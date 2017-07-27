@@ -64,3 +64,19 @@ idToProduct.forEach((key, value) ->
 - If # of collisions is large for a bucket, then linked list if converted to a tree (where lookup = O(logn))
 - If the hashcodes change for keys in a HashMap, then the HashMap will never be able to find your elements. It will break
 - Cannot use mutable keys in hashmaps. That's the contract for HashMap
+
+### TreeMap
+
+- Implements NavigableMap and SortedMap implementations (they are extensions of Map interface)
+- Implemented with a red-black tree based on some order of the keys
+- Keys need to be comparable (implement it if needed)
+- A red-black tree is a kind of balanced binary tree. It will reorganize itself to always be balanced.
+- red-black tree has a left and right subtrees (binary)
+
+### LinkedHashMap
+
+- Based on HashMap, but maintains an order
+- Order can be based on insertion or access
+- Very useful if you want to maintain the order of the elements you entered
+- If you do it by access, you can override a method for it and remove the least recently used key=value pair
+- You can use it to remove older entries on new insertions when you want to keep a fixed size

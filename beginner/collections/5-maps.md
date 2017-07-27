@@ -52,3 +52,15 @@ idToProduct.forEach((key, value) ->
     System.out.println(key + " -> " + value);
 });
 ```
+
+## Implementations (tradeoffs)
+
+### HashMap
+
+- General purpose Map implementation
+- HashMap is array (buckets) of linked lists (changes to tree if number of collision is large)
+- .hashcode() is obtained from the key and placed in some bucket (array entry) based on (hashcode_of_key % bucket_count)
+- If # of collisions is small for a bucket, then elements are placed in linked list (where lookup = O(n))
+- If # of collisions is large for a bucket, then linked list if converted to a tree (where lookup = O(logn))
+- If the hashcodes change for keys in a HashMap, then the HashMap will never be able to find your elements. It will break
+- Cannot use mutable keys in hashmaps. That's the contract for HashMap

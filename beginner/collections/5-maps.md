@@ -80,3 +80,12 @@ idToProduct.forEach((key, value) ->
 - Very useful if you want to maintain the order of the elements you entered
 - If you do it by access, you can override a method for it and remove the least recently used key=value pair
 - You can use it to remove older entries on new insertions when you want to keep a fixed size
+  - Gets called by put and putAll methods
+  - Useful when implementing a cache
+
+### WeakHashMap
+
+- Weak references to its keys. It does not store the actual key objects, just references to those.
+- If Java does garbage collection on that Key, then the key=value pair is removed from the WeakHashMap
+- The key=values are removed when unreacheable
+- Used maninly to implement a cache

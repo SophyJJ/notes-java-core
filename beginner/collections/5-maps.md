@@ -89,3 +89,39 @@ idToProduct.forEach((key, value) ->
 - If Java does garbage collection on that Key, then the key=value pair is removed from the WeakHashMap
 - The key=values are removed when unreacheable
 - Used maninly to implement a cache
+
+### EnumMap
+
+- Very special purpose
+- Use ONLY if you have keys that are enums. Can't use it otherwise.
+- Faster than other maps
+- Implementation based upon bitsets
+- Stores a single long for <= 64 elements
+
+
+## Algorithmic Performance
+
+- HashMap:
+  - put: O(n), Omega(1)
+  - get/conatinerKey: O(logn), Omega(1)
+  - next: O(Capacity/n)
+
+- LinkedHashMap:
+  - put: O(n), Omega(1)
+  - get/conatinerKey: O(logn), Omega(1)
+  - next: O(Capacity/n)
+
+- IdentityHashMap:
+  - put: O(n), Omega(1)
+  - get/conatinerKey: O(n), Omega(1)
+  - next: O(Capacity/n)
+
+- TreeMap:
+  - put: O(logn)
+  - get/conatinerKey: O(logn)
+  - next: O(logn)
+
+- EnumMap:
+  - put: O(1)
+  - get/conatinerKey: O(1)
+  - next: O(1)

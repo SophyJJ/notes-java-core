@@ -44,3 +44,17 @@ public List<Item> getItems() {
     return Collections.unmodifiableList(items);
 }
 ```
+
+### Utilities
+
+```java
+// add elements item1, item2, and item3 into collection "items"
+List<Item> items = new ArrayList<Item>();
+Collections.addAll(items, item1, item2, item3);
+
+// get minimum element in a collection
+final Item minItem = Collections.min(items, Item.BY_PRICE);
+
+// get maximum element in a collection
+final Item maxItem = Collections.min(items, Item.BY_WEIGHT);
+```

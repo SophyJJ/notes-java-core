@@ -3,8 +3,7 @@
 - collection with iteration order
 - each element has an index based on position
 - can hold duplicates
-
-- to sort a List
+- to sort a List use a Comparator
 
 ```java
 

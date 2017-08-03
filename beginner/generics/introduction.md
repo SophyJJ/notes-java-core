@@ -1,10 +1,10 @@
 ## Generics
 
-- Generics stop runtime errors at compile time
-- Generics provide type safety
+- Generics allow you to write generic code that can handle multiple types by receiving the type as input in <>
+- Generics provide type safety by producing compile time errors instead of run time errors when there is type issues
 - Ex: Collections are heterogeneous:
-```java
 
+```java
 // without using Generics
 List list = new ArrayList();
 list.add("1");
@@ -16,4 +16,16 @@ list.add(3);
 List <String> list = new ArrayList<String>();
 ```
 
--
+- Writing a generic class using Generics
+
+```java
+public class CircularBuffer<T> {
+    private T[] buffer;
+    private int readCursor = 0;
+    private int writeCursor = 0;
+
+    public CircularBuffer(T value) {
+        buffer = (T[]) new Object[size];
+    }
+}
+```

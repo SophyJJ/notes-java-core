@@ -1,6 +1,8 @@
 ## Generics
 
 - Generics allow you to write generic code that can handle multiple types by receiving the type as input in <>
+- Diamond operator <> was added in Java 7
+- You can have as many generics as you want (but usualy try to keep it under 3)
 - Generics provide type safety by producing compile time errors instead of run time errors when there is type issues
 - Ex: Collections are heterogeneous:
 

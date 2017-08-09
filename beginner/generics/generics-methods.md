@@ -1,4 +1,4 @@
-## Generics On Methods
+## Generics Methods
 
 - You can make generic methods
 - The types are only visible in that method

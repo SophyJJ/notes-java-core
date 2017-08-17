@@ -21,3 +21,15 @@ for (String elem : strings) {
 ```
 
 ### Erasure
+
+- This is a process done by the compiler where it removed generics from source code and replaces them with raw types with casts in bytecode
+- this is why you can't override method signatures that have List<> as params
+- ex:
+```java
+// this will generate a compile time error
+// error: Both errors have the same erasure3
+// this is because the generics will be removed when compiled
+public void print(List<String> param) {}
+public void print(List<Integer> param) {}
+```
+- this means that generic types are all stripped at runtime, so you can't use them for anything dynamic
